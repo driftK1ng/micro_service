@@ -42,14 +42,14 @@ jobs:
         run: |
           sudo docker build -t part-test ./part_service
           sleep 10
-          docker run -e TEST_BUILD=TRUE -e AMQP_URL="" -e POSTGRES_URL="" -e KEYCLOAK_ID="" -e KEYCLOAK_SECRET="" -e KEYCLOAK_URL="" -e KEYCLOAK_REALM="" -d -p 81:80 part-test
+          docker run -e TEST_BUILD=TRUE -e AMQP_URL="" -e POSTGRES_URL="" -e KEYCLOAK_ID="" -e KEYCLOAK_SECRET="" -e KEYCLOAK_URL="" -e KEYCLOAK_REALM="" -d -p 81:81 part-test
 
 
       - name: prepare e2e test
         run: |
           sudo docker build -t repair-test ./repair_service
           sleep 10
-          docker run -e TEST_BUILD=TRUE -e AMQP_URL="" -e PARTS_URL="" -e POSTGRES_URL="" -e KEYCLOAK_ID="" -e KEYCLOAK_SECRET="" -e KEYCLOAK_URL="" -e KEYCLOAK_REALM="" -d -p 82:80 repair-test
+          docker run -e TEST_BUILD=TRUE -e AMQP_URL="" -e PARTS_URL="" -e POSTGRES_URL="" -e KEYCLOAK_ID="" -e KEYCLOAK_SECRET="" -e KEYCLOAK_URL="" -e KEYCLOAK_REALM="" -d -p 82:81 repair-test
           sleep 25
 
       - name: show info
