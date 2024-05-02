@@ -113,8 +113,8 @@ jobs:
           revision-image-url: cr.yandex/${{ secrets.YC_REGISTRY_ID }}/repair-service:latest
           revision-service-account-id: ${{ secrets.YC_SA_ID }} 
           revision-env: |
-            AMQP_URL=${{ secrets.ENV_AMQP_URL }}
-            POSTGRES_URL=${{ secrets.ENV_POSTGRES_URL }}
+            AMQP_URL=""
+            POSTGRES_URL=""
             TEST_BUILD=TRUE
             PARTS_URL=""
             KEYCLOAK_ID=""
