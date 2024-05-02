@@ -38,6 +38,7 @@ class RepairService():
         if repair.repair_status != RepairStatuses.CREATED:
             logger.warning('backend action: error to activate repair (bad status)')
             raise ValueError
+        part = ''
         if not settings.test_build:
             part = random.choice(get_parts())
         if part != '':
