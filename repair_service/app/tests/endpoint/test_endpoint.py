@@ -4,7 +4,7 @@ from uuid import UUID, uuid4
 from datetime import datetime
 from app.models.repair import Repair, RepairStatuses
 
-test_url = "http://localhost:80/api/repair/"
+test_url = "http://localhost:82/api/repair/"
 
 @pytest.fixture(scope='session')
 def first_data() -> tuple[dict, dict]:
