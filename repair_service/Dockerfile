@@ -10,5 +10,6 @@ COPY ./app /code/app
 COPY ./alembic /code/alembic
 COPY ./alembic.ini /code/alembic.ini
 COPY ./startup.sh /code/startup.sh
+RUN chmod +x /code/startup.sh
 
 CMD ["/code/startup.sh"]
