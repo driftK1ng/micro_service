@@ -1,10 +1,15 @@
 from app.models.part import Part
 from app.repositories.repo import Repo
+from app.settings import settings
 from uuid import UUID, uuid4
-parts: list[Part] = [
-    Part(id=uuid4(), name='Деталь 1', description='Описание 1', price=100),
-    Part(id=uuid4(), name='Деталь 2', description='Описание 2', price=200)
-]
+
+if settings.test_build:
+    parts: list[Part] = []
+else:
+    parts: list[Part] = [
+        Part(id=uuid4(), name='Деталь 1', description='Описание 1', price=100),
+        Part(id=uuid4(), name='Деталь 2', description='Описание 2', price=200)
+    ]
 
 class PartRepo(Repo):
 
