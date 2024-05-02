@@ -114,7 +114,7 @@ jobs:
           revision-service-account-id: ${{ secrets.YC_SA_ID }} 
           revision-env: |
             AMQP_URL=""
-            POSTGRES_URL=""
+            POSTGRES_URL=${{ secrets.POSTGRES_URL }}
             TEST_BUILD=TRUE
             PARTS_URL=""
             KEYCLOAK_ID=""

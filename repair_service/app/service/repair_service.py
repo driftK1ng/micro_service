@@ -15,7 +15,7 @@ logger = getLogger(__name__)
 
 class RepairService():
     def __init__(self):
-        if settings.test_build:
+        if settings.postgres_url=='':
             self.repair_repo = LocalRepo()
         else:
             self.repair_repo = BdRepo()

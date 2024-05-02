@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 
 from app.settings import settings
 
-if (not settings.test_build):
+if (settings.postgres_url!='')
     engine = create_engine(settings.postgres_url)
     SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
